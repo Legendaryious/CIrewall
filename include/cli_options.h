@@ -12,6 +12,6 @@ typedef enum {
 void display_usage(const char *program_name);
 
 // Function to handle command-line options
-CLIMode handle_cli_options(int argc, char *argv[]);
+int handle_cli_options(int argc, char *argv[]);
 
 #endif // CLI_OPTIONS_H
