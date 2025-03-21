@@ -6,7 +6,7 @@ typedef enum {
     MODE_NONE = 0,
     MODE_MAIN = 1 << 0, // 1
     MODE_CLIENT = 1 << 1  // 2
-} CLIMode;
+};
 
 // Function to display usage information
 void display_usage(const char *program_name);
