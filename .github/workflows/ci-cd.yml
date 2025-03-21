@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up C compiler
+        run: sudo apt-get install -y build-essential
+
+      - name: Compile the program
+        run: gcc -o CIrewall src/*.c -I include
+
+      - name: Upload compiled executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: CIrewall
+          path: CIrewall
